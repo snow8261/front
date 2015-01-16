@@ -1,0 +1,19 @@
+document.getElementById("foot01").innerHTML =
+"<p>&copy;  " + new Date().getFullYear() + " W3Schools. All rights reserved.</p>";
+
+document.getElementById("nav01").innerHTML =
+"<ul id='menu'> "+
+"<ul id='menuaaa'> "+
+"<ul id='me'> "+
+
+"<li><a href='Index.html'>Home</a></li>" +
+"<li><a href='Customers.html'>Data</a></li>" +
+"<li><a href='Customers-AngularJs.html'>About</a></li>" +
+"<li><a href='About.html'>About</a></li>" +
+三岁的弟弟
+地你好
+"</ul>";
+
+8 dian 12
+sb 金牛9010
+9306 
