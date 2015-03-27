@@ -1,0 +1,10 @@
+
+//number are golbal var,is not safe
+for(var number=1;number<8;number++) 
+ {
+  var str="";
+  while(str.length<number){
+    str=str+"#";
+    }
+  console.log(str);
+ }

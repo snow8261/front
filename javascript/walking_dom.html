@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<h1>WalkTheDom.html</h1>
+	<p>
+		Enter your name: <input type="text"
+		name="customerName" id="custName" />
+	</p>
+	<input type="button" value="Walk the DOM"
+	onclick="walkTheDOM(document.body, processNode)"/>
+	<script>
+		function walkTheDOM(node, processNode){
+			processNode(node)
+			node = node.firstChild;
+			while(node){
+// call wakTheDOM recursively for each child
+walkTheDOM(node,processNode);
+node = node.nextSibling;
+}
+}
+function processNode(node){
+// the real code for node processing goes here
+console.log("The current node name is "+ node.nodeName);
+}
+</script>
+</body>
+</html>

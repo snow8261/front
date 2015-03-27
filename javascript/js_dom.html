@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<h2>Employee of the month</h2>
+	<div id="myDiv">
+		<input type="button" value="Show me" id="myButton"/>
+	</div>
+	<script>
+		window.onload=function(){
+			document.getElementById("myButton").addEventListener("click",
+				setEmployeeOfTheMonth);
+			document.getElementById("myDiv").addEventListener("click",
+processDivBefore, true); //
+			document.getElementById("myButton").addEventListener("click",
+				processDivAfter);
+		}
+		function setEmployeeOfTheMonth(){
+			console.log("Got the click event in target phase");
+// Create an image and add it to the <body> element
+var empImage=document.createElement("img");
+empImage.setAttribute('src','resources/images/employee.jpg');
+document.body.appendChild(empImage);
+document.getElementById("myButton").removeEventListener("click",
+	setEmployeeOfTheMonth);
+}
+function processDivBefore(evt){
+	console.log("Intercepted the click event in capture phase");
+// Cancel the click event so the button won't get it
+// if (evt.preventDefault) evt.preventDefault();
+// if (evt.stopPropagation) evt.stopPropagation();
+}
+function processDivAfter(){
+	console.log("Got the click event in bubble phase");
+}
+</script>
+</body>
+</html>
