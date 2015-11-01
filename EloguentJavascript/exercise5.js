@@ -86,9 +86,44 @@ var ex5=function(){
     // console.log(groupBy(ancestry,function(person){
     // 	return Math.ceil(person.died/100);
     // }));
+    function every(array, predicate) {
+  for (var i = 0; i < array.length; i++) {
+    if (!predicate(array[i]))
+      return false;
+  }
+  return true;
+}
 
-    
+function some(array, predicate) {
+  for (var i = 0; i < array.length; i++) {
+    if (predicate(array[i]))
+      return true;
+  }
+  return false;
+}
+	var every=function(arr,f){
+		var bool=true;
 
+		arr.forEach(function(element){
+			   console.log("sss:"+f(element));
+			if(!f(element)){
+				bool= false;
+			}
+		});
+		return bool;
+	}
+    var some=function(arr,f){
+    	var bool=false;
+    	arr.forEach(function(element){
+    		if(f(element)){
+    			bool=true;
+    		}
+    	});
+    	return bool;
+    }
+
+    console.log(isNaN(4));
+    console.log(every([3,4],isNaN));
    // agePercentury.forEach(function(century){
    // 		console.log(century.reduce(function(sum,age){
    // 			return sum+age;
